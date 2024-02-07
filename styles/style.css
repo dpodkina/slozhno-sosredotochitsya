@@ -1,5 +1,55 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  border: 1px red solid;
+  color: var(--text-color);
+  background: var(--background-image);
+  background-color: var(--background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--main-font);
+
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+}
+
+.header {
+}
+
+.header__title {
+  border: 1px red solid;
+  width: 759px;
+  height: 130px;
+  margin-top: 273px;
+  font-family: var(--font-family);
+  font-size: 157px;
+  font-weight: 700;
+  line-height: 96px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
+}
+
+.header__subtitle {
+  margin-top: 114px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.header__theme-menu-button {
+  all: unset;
+  text-transform: lowercase;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  border: 1px solid var(--buttons-color);
+  cursor: pointer;
+  padding-left: 13px;
+  padding-right: 13px;
 }
