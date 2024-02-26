@@ -3,6 +3,7 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+
 :root .theme-light {
   --background-image: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
@@ -10,11 +11,11 @@
   --buttons-color: #353430;
   --buttons-hover-color: rgba(50, 49, 45, 0.4);
   --title-shadow-color: #ff0070;
-  --title-color: #ffc2e6;
   --text-color: #353430;
   --decoration-color: #353430;
   --desc-text-color: #353430;
   --subtitle-color: #353430;
+  --title-color: #ffc2e6;
 }
 
 @media (prefers-color-scheme: light) {
@@ -31,6 +32,38 @@
     --desc-text-color: #353430;
     --subtitle-color: #353430;
   }
+  /*DEFAULT.ПОПЫТКА СДЕЛАТЬ РАМКУ У КНОПКИ ДЕНЬ ПРИ ВХОДЕ НА САЙТ*/
+  .header__theme-menu-button_type_light {
+    border: 1px solid black;
+  }
+
+  /*ПРИ НАВЕДЕНИИ ПОЯВЛЯЕТСЯ РАМКА*/
+  button:hover {
+    border: 1px solid var(--buttons-color);
+    border-color: var(--decoration-color);
+  }
+
+  button:focus {
+    border: 1px solid var(--decoration-color);
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  .theme-light_link {
+    all: unset;
+    text-shadow: 1px 1px 0 var(--accent-color);
+    cursor: pointer;
+  }
+
+  .theme-light_link:hover {
+    cursor: pointer;
+    text-decoration: underline 1px var(--decoration-color);
+  }
+}
+
+.theme-light_link:focus {
+  border: 1px black solid;
 }
 
 .page.theme_light {

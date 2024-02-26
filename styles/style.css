@@ -1,42 +1,38 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  border: 1px red solid;
-  color: var(--text-color);
-  background: var(--background-image);
-  background-color: var(--background-color);
+  background-color: var(--background-color, #ffc2e6);
+  color: var(--text-color, #353430);
+  font-family: var(--main-font, sans-serif);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  font-family: var(--main-font);
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .header {
+  display: grid;
+  position: relative;
+  object-fit: cover;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  margin-block-end: 60px;
 }
 
-.header__title {
-  border: 1px red solid;
-  width: 759px;
-  height: 130px;
-  margin-top: 273px;
-  font-family: var(--font-family);
-  font-size: 157px;
+.heading {
+  font-family: var(--main-font);
   font-weight: 700;
-  line-height: 96px;
-  letter-spacing: 0em;
-  text-align: left;
-  color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--title-shadow-color);
-}
-
-.header__subtitle {
-  margin-top: 114px;
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 .header__theme-menu-list {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -48,8 +44,269 @@
   text-transform: lowercase;
   font-family: var(--font-family);
   font-size: var(--font-size);
-  border: 1px solid var(--buttons-color);
   cursor: pointer;
   padding-left: 13px;
   padding-right: 13px;
+  border: none;
+}
+
+.header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid var(--desc-text-color);
+  z-index: 1;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-inline-start: 95.5%;
+  margin-block-start: 2%;
+  border-left: none;
+  border-bottom: none;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid var(--desc-text-color);
+  z-index: 2;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-right: none;
+  border-top: none;
+  margin-block-start: 70.5%;
+  margin-inline-start: 2%;
+}
+
+.header__title {
+  margin-inline-end: 265px;
+  margin-inline-start: 0;
+  margin-block-start: 240px;
+  font-family: var(--font-family);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
+}
+
+.header__subtitle {
+  display: flex;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  background-color: var(--accent-color);
+  margin-inline-end: 2.5%;
+  margin-inline-start: 50%;
+  margin-block-start: 7.5%;
+  margin-block-end: 13%;
+}
+
+.section {
+  margin-inline-start: 20px;
+  margin-inline-end: 20px;
+  margin-block-end: 80px;
+}
+
+.two_columns {
+  display: grid;
+  grid-template-columns: 29.5% auto;
+  column-gap: 45px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+.paragraph {
+  font-family: var(--main-font, sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  margin-block-start: 10px;
+  margin-block-end: 20px;
+}
+
+.second_paragraph {
+  font-family: var(--main-font, sans-serif);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  margin-block-start: 10px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+.density {
+  margin-inline-end: 70%;
+  margin-block-end: 20px;
+}
+
+.recommendations {
+  display: grid;
+  grid-template-columns: 32.4% auto;
+  column-gap: 17px;
+}
+
+.subtitle_rec {
+  margin-block-end: 20px;
+  background-color: var(--accent-color);
+}
+
+.option {
+  background-color: var(--accent-color);
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.pictures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-block-start: 20px;
+  gap: 20px;
+}
+
+.sunset {
+  grid-column: 1 / span 2;
+}
+
+.ice-cream {
+  width: 100%;
+  height: 229%;
+  object-position: center;
+  object-fit: cover;
+}
+
+.tape {
+  width: 100%;
+  height: 100.5%;
+  object-position: center;
+  object-fit: cover;
+  grid-row: 2 / span 2;
+}
+
+.books {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.street {
+  grid-column: 2 / span 2;
+  grid-row: 3;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid var(--desc-text-color);
+  z-index: 1;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-inline-start: 94%;
+  margin-block-end: 42%;
+  border-left: none;
+  border-bottom: none;
+}
+
+.footer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 1px solid var(--desc-text-color);
+  z-index: 2;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-right: none;
+  border-top: none;
+  margin-block-start: 95%;
+  margin-inline-end: 94%;
+}
+
+.footer_title {
+  font-family: var(--main-font);
+  font-size: 157px;
+  font-weight: 700;
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
+  margin-block-start: 26%;
+}
+
+@media (width >=768px) and (orientation: landscape) {
+  .header {
+    display: grid;
+    position: relative;
+    object-fit: cover;
+    margin-block-end: 60px;
+  }
+
+  .header__theme-menu-list {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-block-start: 17%;
+    margin-inline-start: 75.7%;
+  }
+
+  .header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 1px solid var(--desc-text-color);
+    z-index: 1;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin-inline-start: 79.5%;
+    margin-block-start: 2%;
+    border-left: none;
+    border-bottom: none;
+  }
+
+  .header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 1px solid var(--desc-text-color);
+    z-index: 2;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-right: none;
+    border-top: none;
+    margin-block-start: 86.1%;
+    margin-inline-start: 18%;
+  }
+
+  .header__title {
+    margin-inline-end: 265px;
+    margin-inline-start: 0;
+    margin-block-start: 240px;
+    font-family: var(--font-family);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    color: var(--title-color);
+    text-shadow: 4px 4px 0 var(--accent-color);
+  }
+}
+
+@media (width =375px) and (orientation: portrait) {
 }
