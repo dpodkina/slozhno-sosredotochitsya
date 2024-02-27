@@ -3,10 +3,76 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+:root.theme_dark {
+  --background-image: url(../images/cover-image-dark.png);
+  --accent-color: #ff0070;
+  --background-color: hsl(240, 100%, 8%);
+  --buttons-color: #ff0070;
+  --buttons-hover-color: rgba(255, 0, 112, 0.4);
+  --title-shadow-color: #ff0070;
+  --text-color: #f1b2ce;
+  --decoration-color: #ff0070;
+  --desc-text-color: #ff0070;
+  --subtitle-color: #ff0070;
+  --title-color: #db00ff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-image: url(../images/cover-image-dark.png);
+    --accent-color: #ff0070;
+    --background-color: hsl(240, 100%, 8%);
+    --buttons-color: #ff0070;
+    --buttons-hover-color: rgba(255, 0, 112, 0.4);
+    --title-shadow-color: #ff0070;
+    --text-color: #f1b2ce;
+    --decoration-color: #ff0070;
+    --desc-text-color: #ff0070;
+    --subtitle-color: #ff0070;
+    --title-color: #db00ff;
+  }
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--buttons-color);
+}
+
+button:hover {
+  border: 1px solid var(--buttons-hover-color);
+}
+
+button:focus {
+  border: 1px solid var(--buttons-color);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+}
+
+.link {
+  all: unset;
+  text-shadow: 1px 1px 0 var(--accent-color);
+  cursor: pointer;
+}
+
+.link:hover {
+  cursor: pointer;
+  border-block-end: var(--text-color) 1px solid;
+}
+
+.link:focus {
+  border: 1px var(--buttons-color) solid;
+}
 
 .page.theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  background-color: var(--background-color, hsl(240, 100%, 8%));
+  background-image: url(../images/cover-image-dark.png);
+  color: var(--text-color, #353430);
+  font-family: var(--main-font, sans-serif);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }

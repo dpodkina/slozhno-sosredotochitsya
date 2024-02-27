@@ -5,4 +5,14 @@
 
 :root {
   --main-font: "IBM Plex mono";
+  --accent-color: #ff8dcb;
+  --background-color: ##fff1f7;
+  --buttons-color: #353430;
+  --buttons-hover-color: rgba(50, 49, 45, 0.4);
+  --title-shadow-color: #ff0070;
+  --text-color: #353430;
+  --decoration-color: #353430;
+  --desc-text-color: #353430;
+  --subtitle-color: #353430;
+  --title-color: #ffc2e6;
 }
