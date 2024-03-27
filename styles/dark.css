@@ -3,7 +3,7 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-:root.theme_dark {
+:root .theme_dark {
   --background-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
   --background-color: hsl(240, 100%, 8%);
@@ -31,10 +31,13 @@
     --subtitle-color: #ff0070;
     --title-color: #db00ff;
   }
-  .decorated-zone {
+  .page .theme_dark {
     background-image: var(--background-image);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+    object-fit: cover;
+    object-position: center;
   }
 
   .header__theme-menu-button_active {
@@ -75,14 +78,13 @@
     box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
     border-radius: 50%;
     right: 28px;
-    top: 31px;
+    top: 29px;
   }
 
   .circle::before {
     content: "REC";
     position: absolute;
-    right: 24px;
-    top: -7px;
+    right: 20px;
   }
 }
 
@@ -95,14 +97,13 @@
     box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
     border-radius: 50%;
     right: 28px;
-    top: 31px;
+    top: 29px;
   }
 
   .circle::before {
     content: "REC";
     position: absolute;
-    right: 24px;
-    top: -7px;
+    right: 20px;
   }
 }
 
@@ -122,7 +123,6 @@
     content: "REC";
     position: absolute;
     right: 23px;
-    top: -5px;
   }
 
   .header__theme-menu-list {
@@ -145,7 +145,6 @@
     margin-inline-start: 50%;
     margin-inline-end: 5px;
     margin-block-end: 56px;
-    margin-block-start: -25px;
   }
 }
 
@@ -165,7 +164,6 @@
     content: "REC";
     position: absolute;
     right: 23px;
-    top: -7px;
   }
 
   .header__theme-menu-list {
@@ -181,7 +179,6 @@
     margin-left: 7px;
     margin-right: 5px;
     align-self: center;
-    margin-top: -165px;
   }
 
   .header__title {
@@ -192,37 +189,7 @@
   }
 }
 
-.header__theme-menu-button_active {
-  border: 1px solid var(--buttons-color, #ff0070);
-}
-
-button:hover {
-  border: 1px solid var(--buttons-hover-color);
-}
-
-button:focus {
-  border: 1px solid var(--buttons-color);
-  border-left: 0;
-  border-right: 0;
-  border-top: 0;
-}
-
-.link {
-  all: unset;
-  text-shadow: 1px 1px 0 var(--accent-color);
-  cursor: pointer;
-}
-
-.link:hover {
-  cursor: pointer;
-  border-block-end: var(--text-color) 1px solid;
-}
-
-.link:focus {
-  border: 1px var(--buttons-color) solid;
-}
-
-.page.theme_dark {
+.page .theme_dark {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
@@ -230,13 +197,9 @@ button:focus {
   background-color: var(--background-color, hsl(240, 100%, 8%));
   color: var(--text-color, #353430);
   font-family: var(--main-font, sans-serif);
-  background-position: center;
-  background-size: cover;
   background-attachment: fixed;
-}
-
-.decorated-zone {
-  background-image: var(--background-image);
   background-size: cover;
   background-position: center;
+  object-fit: cover;
+  object-position: center;
 }

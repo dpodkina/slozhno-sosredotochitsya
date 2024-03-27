@@ -4,9 +4,12 @@
   background-color: var(--background-color, #ffc2e6);
   color: var(--text-color, #353430);
   font-family: var(--main-font, sans-serif);
-  background-position: center;
-  background-size: cover;
   background-attachment: fixed;
+  background-size: cover;
+  background-image: var(--background-image);
+  background-position: center;
+  object-fit: cover;
+  object-position: center;
 
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
@@ -17,15 +20,7 @@
   object-fit: cover;
   grid-template-rows: 1fr, 1fr, 1fr;
   margin-block-end: 60px;
-  min-height: 768px;
-}
-
-.decorated-zone {
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  object-fit: cover;
-  object-position: center;
+  min-height: 100vh;
 }
 
 .heading {
@@ -98,8 +93,7 @@
 }
 
 .header__subtitle {
-  display: flex;
-  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  font-size: 18px;
   background-color: var(--accent-color);
   margin-inline-end: 2.5%;
   margin-inline-start: 50%;
@@ -253,6 +247,21 @@
   margin-block-end: 5%;
 }
 
+@media (min-width: 569px) and (max-width: 768px) {
+  .header__subtitle {
+    height: 17vh;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 375px) {
+  .header__subtitle {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-start: 6%;
+    height: 117px;
+  }
+}
+
 @media (width <= 768px) {
   .header {
     min-height: 1024px;
@@ -271,14 +280,6 @@
     margin-block-start: 40px;
     margin-bottom: 0;
     text-shadow: 4px 4px 0 var(--accent-color);
-  }
-
-  .header__subtitle {
-    width: 47vw;
-    height: 11vh;
-    margin-inline-start: 50%;
-    margin-block-end: 60px;
-    margin-block-start: 0;
   }
 
   .section {
@@ -344,15 +345,14 @@
     margin-inline-start: 10px;
     margin-inline-end: 10px;
     margin-block-start: 6%;
-    margin-block-end: 9%;
-    width: 95vw;
-    height: 17vh;
+    height: 117px;
   }
 
   .section {
     display: inline-block;
     margin-inline-start: 3%;
     margin-inline-end: 3%;
+    margin-block-end: 40px;
   }
 
   .two_columns {
@@ -366,7 +366,6 @@
   .density {
     margin-inline-start: 0;
     margin-inline-end: 0;
-    margin-block-start: -8%;
   }
 
   .third_column {
@@ -374,13 +373,13 @@
   }
 
   .recommendations {
-    margin-block-start: -7.2%;
+    margin-block-start: 0;
     margin-inline-start: 3%;
     margin-inline-end: 3%;
   }
 
   .image {
-    margin-block-start: -8%;
+    margin-block-start: 0;
   }
 
   .pictures {
@@ -390,23 +389,23 @@
   }
 
   .footer {
-    min-height: 668px;
+    min-height: 100vh;
   }
 
   .footer::before {
     right: 10px;
-    top: -20px;
+    top: 15px;
   }
 
   .footer::after {
-    bottom: 37px;
+    bottom: 10px;
     left: 10px;
   }
 
   .footer_title {
     font-family: var(--main-font);
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-block-start: 10%;
+    margin-block-start: 20%;
     margin-block-end: 22%;
   }
 }
