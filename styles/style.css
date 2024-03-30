@@ -99,6 +99,8 @@
   margin-inline-start: 50%;
   margin-block-start: 7.5%;
   margin-block-end: 13%;
+  overflow-wrap: anywhere;
+  padding: 0;
 }
 
 .section {
@@ -205,7 +207,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  min-height: 768px;
+  min-height: 100vh;
 }
 
 .footer::before {
@@ -247,24 +249,9 @@
   margin-block-end: 5%;
 }
 
-@media (min-width: 569px) and (max-width: 768px) {
-  .header__subtitle {
-    height: 17vh;
-  }
-}
-
-@media (min-width: 767px) and (max-width: 375px) {
-  .header__subtitle {
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-    margin-block-start: 6%;
-    height: 117px;
-  }
-}
-
 @media (width <= 768px) {
   .header {
-    min-height: 1024px;
+    min-height: 100dvh;
   }
 
   .header__theme-menu-list {
@@ -272,14 +259,20 @@
     gap: 15px;
     align-items: flex-end;
     margin-right: 20px;
-    margin-top: 70px;
+    margin-block-start: 25%;
   }
 
   .header__title {
     margin-inline-end: 10%;
-    margin-block-start: 40px;
+    margin-block-start: 20%;
     margin-bottom: 0;
     text-shadow: 4px 4px 0 var(--accent-color);
+  }
+
+  .header__subtitle {
+    min-height: 117px;
+    margin-block-start: 17%;
+    margin-block-end: 24%;
   }
 
   .section {
@@ -295,7 +288,7 @@
   }
 
   .footer {
-    min-height: 1024px;
+    min-height: 100dvh;
   }
 
   .footer::before {
@@ -304,24 +297,25 @@
   }
 
   .footer::after {
-    left: 27px;
+    left: 22px;
     bottom: 25px;
   }
 
   .footer_title {
     text-shadow: 4px 4px 0 var(--accent-color);
+    margin-block-start: 55%;
+    margin-block-end: 57%;
   }
 }
 
 @media (width <= 375px) and (orientation: portrait) {
   .header {
-    margin-block-end: 40px;
-    min-height: 668px;
+    margin-block-end: 15px;
   }
 
   .header__theme-menu-list {
     margin-right: 11px;
-    margin-top: 31px;
+    margin-block-start: 20%;
   }
 
   .header::before {
@@ -330,22 +324,20 @@
   }
 
   .header::after {
-    bottom: 10px;
-    left: 19px;
+    bottom: 39px;
+    left: 16px;
   }
 
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 95.7px;
-    margin-block-start: 7%;
     margin-inline-start: 3%;
   }
 
   .header__subtitle {
     margin-inline-start: 10px;
     margin-inline-end: 10px;
-    margin-block-start: 6%;
-    height: 117px;
+    margin-block-start: 14%;
   }
 
   .section {
@@ -386,10 +378,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-
-  .footer {
-    min-height: 100vh;
   }
 
   .footer::before {
