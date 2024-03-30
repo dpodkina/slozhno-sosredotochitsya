@@ -62,6 +62,14 @@
   .link:focus {
     border: 1px black solid;
   }
+
+  .circle {
+    display: none;
+  }
+
+  .circle::before {
+    display: none;
+  }
 }
 
 .page.theme_light {
@@ -111,5 +119,13 @@
 
   .link:focus {
     border: 1px black solid;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .circle::before {
+    display: none;
   }
 }

@@ -202,4 +202,34 @@
   background-position: center;
   object-fit: cover;
   object-position: center;
+
+  :root .theme_dark {
+    --background-image: url(../images/cover-image-dark.png);
+    --accent-color: #ff0070;
+    --background-color: hsl(240, 100%, 8%);
+    --buttons-color: #ff0070;
+    --buttons-hover-color: rgba(255, 0, 112, 0.4);
+    --title-shadow-color: #ff0070;
+    --text-color: #f1b2ce;
+    --decoration-color: #ff0070;
+    --desc-text-color: #ff0070;
+    --subtitle-color: #ff0070;
+    --title-color: #db00ff;
+  }
+  .circle {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: var(--decoration-color);
+    box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+    border-radius: 50%;
+    right: 28px;
+    top: 29px;
+  }
+
+  .circle::before {
+    content: "REC";
+    position: absolute;
+    right: 20px;
+  }
 }
